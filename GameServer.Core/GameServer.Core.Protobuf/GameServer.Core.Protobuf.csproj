@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\GameServer.Core.Message\GameServer.Core.Message.csproj" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="&#xD;&#xA;      powershell Set-ExecutionPolicy -ExecutionPolicy Unrestricted&#xD;&#xA;      powershell $(ProjectDir)\Protobuf\Proto\CompileProto.ps1 $(ProjectDir)\GameProto\Definitions\protoc.exe $(ProjectDir)\GameProto\Definitions\ $(ProjectDir)\Protobuf\&#xD;&#xA;" />
+  </Target>
+
+</Project>

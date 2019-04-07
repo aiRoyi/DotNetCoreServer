@@ -1,0 +1,8 @@
+syntax = "proto3";
+package Protobuf;
+
+enum MessageType {
+    C2SHeartBeat = 0;
+    C2SLoginGame = 1;
+    S2CLoginResult = 2;
+}
