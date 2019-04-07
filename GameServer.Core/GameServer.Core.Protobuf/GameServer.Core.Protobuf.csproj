@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\GameServer.Core.Message\GameServer.Core.Message.csproj" />
+    <ProjectReference Include="..\GameServer.Core.Message\GameServer.Core.Message.csproj" />
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
